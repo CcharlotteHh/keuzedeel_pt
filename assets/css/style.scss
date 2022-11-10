@@ -1,63 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 $darkblue: #0d1732;
-$blue:#0b2153;
+$blue: #0b2153;
 $purple: #483261;
-$almostpurple :#943b71;
+$almostpurple: #943b71;
 $pink: #d35d8f;
+$slider-name: typing-slider;
+$slides: 2;
+$typing-duration: 3s;
+$tab-letters: 9 4;
+$slider-font-size: 10rem;
+$background: gray;
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: open sans-serif;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
 }
 
-html { 
-    background: no-repeat center center fixed linear-gradient(to bottom,$darkblue,$blue,$purple, $almostpurple);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+*::-webkit-scrollbar {
+  display: none;
 }
 
-#container{
+html {
+  background: no-repeat center center fixed
+    linear-gradient(to bottom, $darkblue, $blue, $purple, $almostpurple);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#container {
+  color: white;
+  a {
+    text-decoration: none;
     color: white;
-    a{
-        text-decoration: none;
-        color:white;
-    }
+  }
 
-    header{
-        height:100px;
-        display:flex;
-        justify-content: space-between;
-        align-items:center;
-        font-size: 2rem;
-        margin: 1em;
-        nav{
-            width: 60%;
-            ul{
-                
-                display:flex;
-                justify-content: flex-end;
-                li{
-                    list-style: none;
-                    margin:1%
-                }
-            }
+  header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    margin: 1em;
+    .projectsbtn {
+      border: 1px solid white;
+      border-radius: 40px;
+      padding: 1%;
+    }
+    nav {
+      width: 80%;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        li {
+          list-style: none;
+          margin: 1%;
         }
+      }
     }
-    .menuBurger{
-        display:none;
-    }
-   
+  }
+  .menuBurger {
+    display: none;
+  }
 }
 
-main{
-    
-    .landingpage{
-        background-color:gray;
-        width:80%;
-        margin:1em;
+main {
+  .landingpage {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  .content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    .typing-slider {
+      height: 38%;
+      width: 80%;
     }
+
+    h2 {
+    }
+  }
 }
+
+@keyframes cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%,
+  to {
+    width: 0;
+  }
+}
+
+@keyframes slide {
+  #{100% / $slides} {
+    font-size: $slider-font-size;
+    letter-spacing: 3px;
+  }
+  to {
+    font-size: 0;
+    letter-spacing: 0;
+  }
+}
+
+.#{$slider-name} {
+  font-family: Consolas, monospace;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.#{$slider-name} p {
+  position: relative;
+  display: inline;
+  font-size: 0;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  animation: slide $typing-duration * $slides step-start infinite;
+}
+
+.#{$slider-name} p::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-left: 3px solid white;
+  background-color: $background;
+  animation: typing $typing-duration infinite, cursor 1s infinite;
+}
+
+@each $letters in $tab-letters {
+  $i: index($tab-letters, $letters);
+  .#{$slider-name} p:nth-child(#{$i}) {
+    animation-delay: $typing-duration * ($i - 1);
+    &::after {
+      animation-delay: $typing-duration * ($i - 1);
+      animation-timing-function: steps(#{$letters}), step-end;
+    }
+  }
+}
+
+.projects {
+  height: 100vh;
+  background-color: $background;
+
+  .projectContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: $almostpurple;
+
+    .projectCard{
+        display:flex;
+        flex-direction: column;
+    }
+  }
+  
+}
+
+

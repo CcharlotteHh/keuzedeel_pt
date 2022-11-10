@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: open sans-serif;
+  font-family: "Roboto Slab", serif;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -25,8 +30,13 @@ html {
   font-size: 2rem;
   margin: 1em;
 }
+#container header .projectsbtn {
+  border: 1px solid white;
+  border-radius: 40px;
+  padding: 1%;
+}
 #container header nav {
-  width: 60%;
+  width: 80%;
 }
 #container header nav ul {
   display: flex;
@@ -41,7 +51,134 @@ html {
 }
 
 main .landingpage {
-  background-color: gray;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+main .content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .content .typing-slider {
+  height: 38%;
   width: 80%;
-  margin: 1em;
+}
+@-webkit-keyframes cursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+@keyframes cursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%, to {
+    width: 0;
+  }
+}
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%, to {
+    width: 0;
+  }
+}
+@-webkit-keyframes slide {
+  50% {
+    font-size: 10rem;
+    letter-spacing: 3px;
+  }
+  to {
+    font-size: 0;
+    letter-spacing: 0;
+  }
+}
+@keyframes slide {
+  50% {
+    font-size: 10rem;
+    letter-spacing: 3px;
+  }
+  to {
+    font-size: 0;
+    letter-spacing: 0;
+  }
+}
+.typing-slider {
+  font-family: Consolas, monospace;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.typing-slider p {
+  position: relative;
+  display: inline;
+  font-size: 0;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  -webkit-animation: slide 6s step-start infinite;
+          animation: slide 6s step-start infinite;
+}
+
+.typing-slider p::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-left: 3px solid white;
+  background-color: gray;
+  -webkit-animation: typing 3s infinite, cursor 1s infinite;
+          animation: typing 3s infinite, cursor 1s infinite;
+}
+
+.typing-slider p:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.typing-slider p:nth-child(1)::after {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-timing-function: steps(9), step-end;
+          animation-timing-function: steps(9), step-end;
+}
+
+.typing-slider p:nth-child(2) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.typing-slider p:nth-child(2)::after {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-timing-function: steps(4), step-end;
+          animation-timing-function: steps(4), step-end;
+}
+
+.projects {
+  height: 100vh;
+  background-color: gray;
+}
+.projects .projectContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #943b71;
+}
+.projects .projectContainer .projectCard {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
