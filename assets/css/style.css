@@ -169,16 +169,46 @@ main .content .typing-slider {
           animation-timing-function: steps(4), step-end;
 }
 
-.projects {
-  height: 100vh;
-  background-color: gray;
-}
 .projects .projectContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: #943b71;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .projects .projectContainer .projectCard {
+  height: 600px;
+  width: 20%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.projects .projectContainer .projectCard .projectImg {
+  height: 60%;
+  width: 100%;
+}
+.projects .projectContainer .projectCard .projectImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projects .projectContainer .projectCard .projectDesc {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact {
+  background-color: #0b2153;
+  display: flex;
+  font-size: 2rem;
+}
+.contact .formContainer {
+  width: 50%;
+}
+.contact .mapsContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

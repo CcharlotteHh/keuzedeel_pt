@@ -160,20 +160,54 @@ main {
 }
 
 .projects {
-  height: 100vh;
-  background-color: $background;
+ 
+
 
   .projectContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: $almostpurple;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
 
-    .projectCard{
-        display:flex;
+    .projectCard {
+      height:600px;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .projectImg {
+        height: 60%;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .projectDesc {
+        height:40%;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
   }
-  
 }
 
+.contact {
+  background-color: $blue;
+  display: flex;
+  font-size: 2rem;
 
+ .formContainer{
+  width:50%;
+ }
+  .mapsContainer{
+    width: 50%;
+    display: flex;
+    justify-content:center;
+  }
+
+}
