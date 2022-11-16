@@ -161,13 +161,15 @@ main {
 }
 
 .projects {
+  height: 100vh;
   .projectContainer {
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
     .projectCard {
-      height: 600px;
+      height: 100%;
       width: 20%;
       display: flex;
       flex-direction: column;
@@ -193,6 +195,73 @@ main {
   }
 }
 
+.aboutMe {
+  height: 100vh;
+  background-color: $purple;
+  display: flex;
+
+
+  .about1 {
+    width: 50%;
+    border: 1px solid $purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .aboutImgContainer {
+      height: 50%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .textContainer {
+      width: 70%;
+    }
+  }
+  .about2 {
+    width: 50%;
+    
+    background-color: $almostpurple;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .aboutList {
+      margin: 25%;
+      display: flex;
+      width: 60%;
+      height: 60%;
+      background-color: $darkblue;
+      list-style: none;
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
+
+  @media (max-width:700px){
+    .aboutMe{
+      flex-direction: column;
+    
+    .about1{
+      width: 100%;
+      height: 100%;
+    }
+    .about2{
+      width: 100%;
+      height: 100%;
+      background-color:green;
+    }
+  }
+}
+}
+
+
+
 .contact {
   height: 100vh;
   width: 100%;
@@ -215,7 +284,7 @@ main {
 
     .form-container {
       width: 100%;
-      padding:1%;
+      padding: 1%;
       h3 {
         font-size: 1.2rem;
         font-weight: 600;
@@ -245,18 +314,18 @@ main {
       }
     }
   }
-  .map iframe{
-    width:100%;
-    height:100%;
+  .map iframe {
+    width: 100%;
+    height: 100%;
   }
 
-  @media (max-width:700px){
-    .contact-container{
+  @media (max-width: 700px) {
+    .contact-container {
       grid-template-columns: 1fr;
-      gap:1rem;
-    
-      .map iframe{
-        height:400px;
+      gap: 1rem;
+
+      .map iframe {
+        height: 400px;
       }
     }
   }

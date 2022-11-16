@@ -170,13 +170,17 @@ main .content .typing-slider {
           animation-timing-function: steps(4), step-end;
 }
 
+.projects {
+  height: 100vh;
+}
 .projects .projectContainer {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .projects .projectContainer .projectCard {
-  height: 600px;
+  height: 100%;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -198,6 +202,63 @@ main .content .typing-slider {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.aboutMe {
+  height: 100vh;
+  background-color: #483261;
+  display: flex;
+}
+.aboutMe .about1 {
+  width: 50%;
+  border: 1px solid #483261;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.aboutMe .about1 .aboutImgContainer {
+  height: 50%;
+}
+.aboutMe .about1 .aboutImgContainer img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.aboutMe .about1 .textContainer {
+  width: 70%;
+}
+.aboutMe .about2 {
+  width: 50%;
+  background-color: #943b71;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.aboutMe .about2 .aboutList {
+  margin: 25%;
+  display: flex;
+  width: 60%;
+  height: 60%;
+  background-color: #0d1732;
+  list-style: none;
+}
+.aboutMe .about2 .aboutList:hover {
+  background-color: #0b2153;
+}
+@media (max-width: 700px) {
+  .aboutMe .aboutMe {
+    flex-direction: column;
+  }
+  .aboutMe .aboutMe .about1 {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutMe .aboutMe .about2 {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
 }
 
 .contact {
