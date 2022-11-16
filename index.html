@@ -15,6 +15,11 @@
     <header>
       <a class="projectsbtn" href="#projects">View My Projects</a>
       <nav>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
         <ul class="navList">
           <li>
             <a href="#about">About</a>
@@ -24,7 +29,6 @@
           </li>
         </ul>
       </nav>
-      <div class="menuBurger">place</div>
     </header>
     <main>
       <section class="landingpage">
@@ -150,10 +154,10 @@
           <!--formcontainer-->
           <div class="form-container">
           <h3>Contact</h3>
-          <form action="" class="contact-form">
-            <input type="text" value="naam" placeholder="*Naam" required>
-            <input type="email" value="email" placeholder="*Email" required>
-            <textarea name="bericht" id="" cols="30" rows="10" placeholder="bericht"></textarea>
+          <form method="POST" action="form.php" class="contact-form">
+            <input type="text" value="naam" placeholder="*Naam" required name="naam">
+            <input type="email" value="email" placeholder="*Email" required name="email">
+            <textarea name="bericht" id="" cols="30" rows="10" placeholder="bericht" name="bericht">
             <input type="submit" value="Verstuur" class="send-button">
           </form>
         </div>

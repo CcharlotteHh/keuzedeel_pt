@@ -36,6 +36,30 @@ html {
   border-radius: 40px;
   padding: 1%;
 }
+#container header .toggle-button {
+  position: absolute;
+  top: 0.1rem;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 35px;
+}
+#container header .toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+@media (max-width: 600px) {
+  #container header .toggle-button {
+    display: flex;
+  }
+  #container header .navList,
+#container header .projectsbtn {
+    display: none;
+  }
+}
 #container header nav {
   width: 80%;
 }
@@ -67,8 +91,15 @@ main .content .typing-slider {
   height: 38%;
   width: 80%;
 }
+
+@media (max-width: 700px) {
+  .typing-slider {
+    height: 15%;
+    width: 20%;
+  }
+}
 @-webkit-keyframes cursor {
-  from, to {
+  to {
     border-color: transparent;
   }
   50% {
@@ -76,7 +107,7 @@ main .content .typing-slider {
   }
 }
 @keyframes cursor {
-  from, to {
+  to {
     border-color: transparent;
   }
   50% {
@@ -87,7 +118,7 @@ main .content .typing-slider {
   from {
     width: 100%;
   }
-  90%, to {
+  to {
     width: 0;
   }
 }
@@ -95,7 +126,7 @@ main .content .typing-slider {
   from {
     width: 100%;
   }
-  90%, to {
+  to {
     width: 0;
   }
 }
@@ -170,8 +201,24 @@ main .content .typing-slider {
           animation-timing-function: steps(4), step-end;
 }
 
+@media (max-width: 700px) {
+  @-webkit-keyframes slide {
+    50% {
+      font-size: 5rem;
+      letter-spacing: 3px;
+    }
+  }
+  @keyframes slide {
+    50% {
+      font-size: 5rem;
+      letter-spacing: 3px;
+    }
+  }
+}
 .projects {
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .projects .projectContainer {
   height: 100%;
@@ -180,11 +227,17 @@ main .content .typing-slider {
   justify-content: space-around;
 }
 .projects .projectContainer .projectCard {
-  height: 100%;
+  opacity: 0.9;
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.projects .projectContainer .projectCard:hover {
+  opacity: 1;
+  transition: all 300ms ease-in;
+  transform: scale(1.02);
+  border: 1px solid white;
 }
 .projects .projectContainer .projectCard .projectImg {
   height: 60%;
@@ -197,20 +250,36 @@ main .content .typing-slider {
      object-fit: cover;
 }
 .projects .projectContainer .projectCard .projectDesc {
-  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+.projects .projectContainer .projectCard .projectDesc h2 {
+  margin-top: 4%;
+}
+.projects .projectContainer .projectCard .projectDesc a {
+  border: 1px solid white;
+  border-radius: 40px;
+  padding: 1%;
+  margin-top: 4%;
+}
+.projects .projectContainer .projectCard .projectDesc p {
+  margin-top: 4%;
 }
 
+@media (max-width: 700px) {
+  .projectContainer {
+    flex-direction: column;
+  }
+}
 .aboutMe {
   height: 100vh;
   background-color: #483261;
   display: flex;
 }
 .aboutMe .about1 {
-  width: 50%;
+  height: 100vh;
   border: 1px solid #483261;
   display: flex;
   flex-direction: column;
@@ -246,21 +315,18 @@ main .content .typing-slider {
 .aboutMe .about2 .aboutList:hover {
   background-color: #0b2153;
 }
+
 @media (max-width: 700px) {
-  .aboutMe .aboutMe {
+  .aboutMe {
     flex-direction: column;
-  }
-  .aboutMe .aboutMe .about1 {
-    width: 100%;
     height: 100%;
+    border: 1px solid green;
   }
-  .aboutMe .aboutMe .about2 {
+  .aboutMe .about1,
+.aboutMe .about2 {
     width: 100%;
-    height: 100%;
-    background-color: green;
   }
 }
-
 .contact {
   height: 100vh;
   width: 100%;
@@ -271,40 +337,47 @@ main .content .typing-slider {
   justify-content: center;
 }
 .contact .contact-container {
-  max-width: 960px;
+  max-width: 1200px;
   margin: auto;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  color: white;
   background-color: #0d1732;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 .contact .contact-container .form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   padding: 1%;
 }
 .contact .contact-container .form-container h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 .contact .contact-container .form-container .contact-form {
+  margin: 0 auto;
+  width: 90%;
   display: grid;
   row-gap: 2rem;
 }
 .contact .contact-container .form-container .contact-form .send-button {
-  border: 1px solid white;
+  margin: 0 auto;
   border-radius: 40px;
-  padding: 1%;
+  width: 50%;
+  margin-bottom: 4%;
 }
 .contact .contact-container .form-container .contact-form input,
 .contact .contact-container .form-container .contact-form textarea {
   width: 100%;
   border: none;
   outline: none;
-  background-color: #943b71;
+  background-color: #0b2153;
   padding: 10px;
   font-size: 0.9rem;
   color: white;
@@ -320,6 +393,6 @@ main .content .typing-slider {
     gap: 1rem;
   }
   .contact .contact-container .map iframe {
-    height: 400px;
+    height: 500px;
   }
 }/*# sourceMappingURL=style.css.map */
