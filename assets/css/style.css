@@ -216,12 +216,9 @@ main .content .typing-slider {
   }
 }
 .projects {
-  height: 100vh;
   display: flex;
-  align-items: center;
 }
 .projects .projectContainer {
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -229,6 +226,7 @@ main .content .typing-slider {
 .projects .projectContainer .projectCard {
   opacity: 0.9;
   width: 20%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,10 +235,9 @@ main .content .typing-slider {
   opacity: 1;
   transition: all 300ms ease-in;
   transform: scale(1.02);
-  border: 1px solid white;
 }
 .projects .projectContainer .projectCard .projectImg {
-  height: 60%;
+  height: 50%;
   width: 100%;
 }
 .projects .projectContainer .projectCard .projectImg img {
@@ -250,17 +247,23 @@ main .content .typing-slider {
      object-fit: cover;
 }
 .projects .projectContainer .projectCard .projectDesc {
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 .projects .projectContainer .projectCard .projectDesc h2 {
-  margin-top: 4%;
+  margin-top: 1%;
 }
 .projects .projectContainer .projectCard .projectDesc a {
   border: 1px solid white;
   border-radius: 40px;
+  width: 60%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1%;
   margin-top: 4%;
 }
@@ -269,8 +272,8 @@ main .content .typing-slider {
 }
 
 @media (max-width: 700px) {
-  .projectContainer {
-    flex-direction: column;
+  .projectCard {
+    flex-basis: 50%;
   }
 }
 .aboutMe {
@@ -352,7 +355,6 @@ main .content .typing-slider {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   padding: 1%;
 }
 .contact .contact-container .form-container h3 {
@@ -361,7 +363,7 @@ main .content .typing-slider {
   margin-bottom: 1rem;
 }
 .contact .contact-container .form-container .contact-form {
-  margin: 0 auto;
+  height: 100%;
   width: 90%;
   display: grid;
   row-gap: 2rem;

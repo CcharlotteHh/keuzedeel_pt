@@ -199,11 +199,10 @@ main {
 }
 }
 .projects {
-  height: 100vh;
   display: flex;
-  align-items: center;
+
   .projectContainer {
-    height: 100%;
+   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -211,6 +210,7 @@ main {
     .projectCard {
       opacity: 0.9;
       width: 20%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -218,11 +218,10 @@ main {
         opacity: 1;
         transition: all 300ms ease-in;
         transform: scale(1.02);
-        border: 1px solid white;
       }
 
       .projectImg {
-        height: 60%;
+        height: 50%;
         width: 100%;
         img {
           width: 100%;
@@ -231,19 +230,26 @@ main {
         }
       }
       .projectDesc {
+        height: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-evenly;
         h2 {
-          margin-top: 4%;
+          margin-top: 1%;
         }
 
         a {
           border: 1px solid white;
           border-radius: 40px;
+          width: 60%;
+          height:15%;
+          display:flex;
+          justify-content: center;
+          align-items: center;
           padding: 1%;
           margin-top: 4%;
+         
         }
 
         p {
@@ -255,8 +261,13 @@ main {
 }
 
 @media (max-width: 700px) {
-  .projectContainer {
-    flex-direction: column;
+  .projectCard {
+    flex-basis: 50%;
+    .projectDesc{
+      a{
+        
+      }
+    }
   }
   
 }
@@ -332,7 +343,6 @@ main {
   .contact-container {
     max-width: 1200px;
     margin: auto;
-
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -346,7 +356,6 @@ main {
       display: flex;
       align-items: center;
       flex-direction: column;
-      width: 100%;
       padding: 1%;
       h3 {
         font-size: 2rem;
@@ -354,7 +363,7 @@ main {
         margin-bottom: 1rem;
       }
       .contact-form {
-        margin: 0 auto;
+        height: 100%;
         width: 90%;
         display: grid;
         row-gap: 2rem;
