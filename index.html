@@ -13,14 +13,17 @@
 <body>
   <div id="container">
     <header>
-      <a class="projectsbtn" href="#projects">View My Projects</a>
       <nav>
-        <a href="#" class="toggle-button">
+        <a href="#" class="toggle-button" id="toggle-button" onclick="myFunction()">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </a>
-        <ul class="navList">
+
+        <ul class="navList" id="navList">
+          <li>
+            <a class="projectsbtn" href="#projects">View My Projects</a>
+          </li>
           <li>
             <a href="#about">About</a>
           </li>
@@ -40,7 +43,8 @@
 
         </div>
       </section>
-      <section id="projects" class="projects"><!-- Project-->
+      <section id="projects" class="projects">
+        <!-- Project-->
         <div class="projectContainer">
           <div class="projectCard">
             <figure class="projectImg">
@@ -105,71 +109,84 @@
 
         </div>
       </section>
-      <section id="about" class="aboutMe"><!--about-->
+      <section id="about" class="aboutMe">
+        <!--about-->
         <div class="about1">
-        <figure class="aboutImgContainer">
-          <img src="assets/img/placeholder.jpg" alt="placeholder">
-        </figure>
-        <div class="textContainer">
-          Mijn naam is Charlotte Hage.
-          Ik ben 22 jaar oud en ik woon ik Houten.
-          Ik ben een Webdevelopment student op het Grafisch Lycuem.
-        </div>
-      </div>
-      <div class="about2">
-           <ul class="aboutList">
-            <li><h3>title</h3></li>
-            <li>CSS</li>
-            <li>PHP</li>
-            <li>Mysql</li>
-            <li>OOP</li>
-           </ul>
-           <ul class="aboutList">
-            <li><h3>title</h3></li>
-            <li>CSS</li>
-            <li>PHP</li>
-            <li>Mysql</li>
-            <li>OOP</li>
-           </ul>
-           <ul class="aboutList">
-            <li><h3>title</h3></li>
-            <li>CSS</li>
-            <li>PHP</li>
-            <li>Mysql</li>
-            <li>OOP</li>
-           </ul>
-           <ul class="aboutList">
-            <li><h3>title</h3></li>
-            <li>CSS</li>
-            <li>PHP</li>
-            <li>Mysql</li>
-            <li>OOP</li>
-           </ul>
-          
+          <figure class="aboutImgContainer">
+            <img src="assets/img/placeholder.jpg" alt="placeholder">
+          </figure>
+          <div class="textContainer">
+            Mijn naam is Charlotte Hage.
+            Ik ben 22 jaar oud en ik woon ik Houten.
+            Ik ben een Webdevelopment student op het Grafisch Lycuem.
           </div>
-      </div>
-      </section>
-      <section id="contact" class="contact"><!--contact-->
-        <div class="contact-container">
-          <!--formcontainer-->
-          <div class="form-container">
-          <h3>Contact</h3>
-          <form method="POST" action="form.php" class="contact-form">
-            <input type="text" value="naam" placeholder="*Name" required name="name">
-            <input type="email" value="email" placeholder="*Email" required name="email">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Write your message"></textarea>
-            <input type="submit" value="Verstuur" class="send-button">
-          </form>
         </div>
-        <!--Map-->
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.1476182922993!2d5.104056215791017!3d52.07704257973276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6658b39d11917%3A0xc4aaed9051c276c!2sGrafisch%20Lyceum%20Utrecht!5e0!3m2!1snl!2snl!4v1668588707229!5m2!1snl!2snl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="about2">
+          <ul class="aboutList">
+            <li>
+              <h3>title</h3>
+            </li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>Mysql</li>
+            <li>OOP</li>
+          </ul>
+          <ul class="aboutList">
+            <li>
+              <h3>title</h3>
+            </li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>Mysql</li>
+            <li>OOP</li>
+          </ul>
+          <ul class="aboutList">
+            <li>
+              <h3>title</h3>
+            </li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>Mysql</li>
+            <li>OOP</li>
+          </ul>
+          <ul class="aboutList">
+            <li>
+              <h3>title</h3>
+            </li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>Mysql</li>
+            <li>OOP</li>
+          </ul>
+
         </div>
-      </div>
-      </section>
-    </main>
-    <footer>aaaaa</footer>
   </div>
+  </section>
+  <section id="contact" class="contact">
+    <!--contact-->
+    <div class="contact-container">
+      <!--formcontainer-->
+      <div class="form-container">
+        <h3>Contact</h3>
+        <form method="POST" action="form.php" class="contact-form">
+          <input type="text" value="naam" placeholder="*Name" required name="name">
+          <input type="email" value="email" placeholder="*Email" required name="email">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Write your message"></textarea>
+          <input type="submit" value="Verstuur" class="send-button">
+        </form>
+      </div>
+      <!--Map-->
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.1476182922993!2d5.104056215791017!3d52.07704257973276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6658b39d11917%3A0xc4aaed9051c276c!2sGrafisch%20Lyceum%20Utrecht!5e0!3m2!1snl!2snl!4v1668588707229!5m2!1snl!2snl"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer>aaaaa</footer>
+  </div>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
