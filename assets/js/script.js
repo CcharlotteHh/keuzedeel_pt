@@ -1,8 +1,8 @@
 function myFunction() {
-    var navList = document.getElementById("navList");
-    if (navList.style.display === "flex") {
-      navList.style.display = "none";
+    var navMenu = document.getElementById("navMenu");
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
     } else {
-      navList.style.display = "flex";
+        navMenu.style.display = "flex";
     }
   }
