@@ -340,6 +340,21 @@ main .content .typing-slider {
   background-color: #483261;
 }
 
+@media (max-width: 700px) {
+  .aboutMain {
+    flex-direction: column;
+  }
+  .aboutMain .aboutImg {
+    margin-top: 5%;
+  }
+  .aboutMain .aboutText {
+    justify-content: space-between;
+  }
+  .aboutMain .aboutText a {
+    margin-top: 5%;
+    width: 80%;
+  }
+}
 .about2 {
   display: flex;
 }
