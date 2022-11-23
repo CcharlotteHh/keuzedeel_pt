@@ -260,12 +260,14 @@ main .content .typing-slider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  position: relative;
 }
 .projects .projectContainer .projectCard .projectDesc h2 {
-  margin-top: 1%;
+  margin-top: 4%;
 }
 .projects .projectContainer .projectCard .projectDesc a {
+  position: absolute;
+  bottom: 0px;
   border: 1px solid white;
   border-radius: 40px;
   width: 60%;
@@ -274,10 +276,11 @@ main .content .typing-slider {
   justify-content: center;
   align-items: center;
   padding: 1%;
-  margin-top: 4%;
+  margin-bottom: 10%;
+  text-decoration: none;
 }
 .projects .projectContainer .projectCard .projectDesc p {
-  margin-top: 4%;
+  margin-top: 10%;
   width: 80%;
 }
 
